@@ -1,0 +1,28 @@
+generate_report:
+  name: Generate report
+  description: >-
+    Build a household battery inventory report and write it to disk. Also
+    returns the report as response data so automations and scripts can use it.
+  fields:
+    format:
+      name: Format
+      description: Which file(s) to write.
+      default: both
+      selector:
+        select:
+          options:
+            - markdown
+            - csv
+            - both
+    path:
+      name: Output folder
+      description: >-
+        Folder to write into. Relative paths are resolved inside the Home
+        Assistant config directory. Must be inside an allowed directory.
+      example: battery_arsenal
+      selector:
+        text:
+
+refresh:
+  name: Refresh inventory
+  description: Force an immediate rebuild of the inventory. Mostly for troubleshooting.

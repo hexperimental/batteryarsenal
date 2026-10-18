@@ -1,0 +1,71 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Battery Arsenal",
+        "description": "Battery Arsenal builds a household battery inventory from the data Battery Notes already knows. Select Submit to add it."
+      }
+    },
+    "abort": {
+      "already_configured": "Battery Arsenal is already set up.",
+      "battery_notes_not_found": "Battery Notes is required but is not loaded. Install it from HACS and set it up, then add Battery Arsenal again."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Battery Arsenal options",
+        "data": {
+          "report_path": "Report output folder",
+          "non_consumable_keywords": "Non-consumable keywords (comma-separated)",
+          "excluded_devices": "Excluded devices",
+          "degraded_mode": "Degraded mode (list battery devices Battery Notes does not track)",
+          "restock_months": "Restock horizon (months)"
+        },
+        "data_description": {
+          "report_path": "Relative paths are resolved inside the config directory.",
+          "non_consumable_keywords": "Battery types matching any keyword are listed but not counted in totals.",
+          "restock_months": "How many months of stock the suggested stock level should cover."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "total_cells": { "name": "Total cells in rotation" },
+      "most_common": { "name": "Most common battery" },
+      "unmapped": { "name": "Unmapped devices" },
+      "non_consumable": { "name": "Non-consumable devices" }
+    }
+  },
+  "issues": {
+    "battery_notes_missing": {
+      "title": "Battery Notes is not available",
+      "description": "Battery Arsenal relies on Battery Notes, which is not currently loaded. Inventory sensors are unavailable until Battery Notes returns. Install and set up Battery Notes from HACS; this issue clears automatically once it loads."
+    },
+    "battery_notes_contract_changed": {
+      "title": "Battery Notes data looks different",
+      "description": "Battery Notes entities were found, but none expose a battery type attribute. The upstream data format may have changed. Check that Battery Notes is up to date and working; this issue clears automatically once battery types are readable again."
+    }
+  },
+  "services": {
+    "generate_report": {
+      "name": "Generate report",
+      "description": "Build a battery inventory report, write it to disk, and return it as response data.",
+      "fields": {
+        "format": {
+          "name": "Format",
+          "description": "Which file(s) to write: markdown, csv, or both."
+        },
+        "path": {
+          "name": "Output folder",
+          "description": "Folder to write into. Relative paths resolve inside the config directory."
+        }
+      }
+    },
+    "refresh": {
+      "name": "Refresh inventory",
+      "description": "Force an immediate rebuild of the inventory."
+    }
+  }
+}
