@@ -28,6 +28,17 @@ entities and events Battery Notes exposes.
 It does **not** monitor battery levels or send low-battery alerts — Battery Notes
 and Home Assistant already do that.
 
+## Screenshots
+
+**Dashboard** — summary tiles plus a live "cells by type" breakdown:
+
+![Battery Arsenal dashboard card](images/dashboard-card.png)
+
+**Integration page** — the Battery Arsenal device with its sensors and
+downloadable diagnostics:
+
+![Battery Arsenal device page](images/device-page.jpg)
+
 ## Installation (HACS)
 
 Until this is in the HACS default list, add it as a custom repository:
