@@ -1,5 +1,7 @@
 # Battery Arsenal
 
+<img src="icon.png" alt="Battery Arsenal icon" width="300" height="300">
+
 A Home Assistant custom integration that turns the battery data
 [Battery Notes](https://github.com/andrew-codechimp/HA-Battery-Notes) already
 knows into a **household battery inventory**: which batteries you need, how many

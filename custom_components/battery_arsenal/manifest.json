@@ -1,14 +1,14 @@
 {
   "domain": "battery_arsenal",
   "name": "Battery Arsenal",
-  "version": "0.4.0",
-  "documentation": "https://github.com/hexperimental/batteryarsenal",
-  "issue_tracker": "https://github.com/hexperimental/batteryarsenal/issues",
+  "after_dependencies": ["battery_notes"],
   "codeowners": ["@hexperimental"],
   "config_flow": true,
-  "after_dependencies": ["battery_notes"],
   "dependencies": ["repairs"],
+  "documentation": "https://github.com/hexperimental/batteryarsenal",
   "integration_type": "helper",
   "iot_class": "calculated",
-  "requirements": []
+  "issue_tracker": "https://github.com/hexperimental/batteryarsenal/issues",
+  "requirements": [],
+  "version": "0.4.0"
 }

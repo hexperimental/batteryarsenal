@@ -12,3 +12,11 @@ dist/
 
 # build artifacts
 *.zip
+
+# happs — never ship AI/agent scaffolding
+.claude/
+.happs/
+apps.json
+PRODUCT.md
+CLAUDE.md
+.DS_Store
